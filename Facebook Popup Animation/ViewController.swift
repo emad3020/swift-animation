@@ -115,6 +115,8 @@ class ViewController: UIViewController {
                 })
                 
             }) { (_) in
+                self.iconContainerView.transform = CGAffineTransform(translationX: 0, y: 50)
+                self.iconContainerView.alpha = 0 
                 self.iconContainerView.removeFromSuperview()
             }
             
@@ -135,7 +137,7 @@ class ViewController: UIViewController {
         
         
         if hitTestView is UIImageView {
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 
                 let stackview = self.iconContainerView.subviews.first
                 stackview?.subviews.forEach({ (imageView) in
